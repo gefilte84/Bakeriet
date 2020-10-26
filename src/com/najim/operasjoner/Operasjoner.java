@@ -9,20 +9,21 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Operasjoner {
-    List<Ingrediens> ingrediensList = new ArrayList<>();
-    List<Oppskrift> oppskriftList = new ArrayList<>();
-    List<Oppskrift> oppskriftIng = new ArrayList<>();
+    ArrayList<Ingrediens> ingrediensList = new ArrayList<>();
+    ArrayList<Oppskrift> oppskriftList = new ArrayList<>();
 
 
 
-    public void registrerIngrediens(String ingrediensNavn, int gram) {
+    public void registrerIngrediens(String ingrediensNavn, Integer gram) {
         Ingrediens nyIngrediens = new Ingrediens(UUID.randomUUID(), ingrediensNavn, gram);
         ingrediensList.add(nyIngrediens);
     }
-    public void registrerOppskrift(String oppskriftNavn, Kaketype kaketype, String ingrediensNavn, int gram){
+    public void registrerOppskrift(String oppskriftNavn, Kaketype kaketype, ArrayList ingrediensList){
+        // Metoden for å legge til ny oppskrift
+
         Oppskrift nyOppskrift = new Oppskrift(UUID.randomUUID(), oppskriftNavn, LocalDate.now(),
-                kaketype);
-        oppskriftList.addAll(oppskriftIng);
+                kaketype, ingrediensList);
+        oppskriftList.add(nyOppskrift);
     }
 
     public void oppdaterLager(UUID ingrediensId, int gram) {
@@ -48,7 +49,7 @@ public class Operasjoner {
     public void alleKakeTyperSortertPaaNavn(Kaketype kaketype) {
         for (Oppskrift sokKake : oppskriftList) {
             if (sokKake.getKaketype() == kaketype) {
-                Arrays.sort(new String[]{sokKake.oppskriftNavn});
+                Arrays.sort(new String[]{sokKake.getOppskriftNavn()});
                 System.out.println("Alle oppskrifter: " + sokKake);
             }
         }

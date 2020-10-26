@@ -5,13 +5,14 @@ import com.najim.oppskrift.Kaketype;
 import com.najim.oppskrift.Oppskrift;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class OperasjonerTest {
+
+
+    ArrayList<Oppskrift> oppskriftList = new ArrayList<>();
 
     @Test
     void registrerIngrediens() {
@@ -24,16 +25,16 @@ class OperasjonerTest {
         System.out.println(regIngrediens.ingrediensList);
     }
 
-    @Test
+    @Test // test for å legge til en oppskrift
     void registrerOppskrift() {
-        Operasjoner regNyOpp = new Operasjoner();
-        
-        regNyOpp.registrerOppskrift("Boller", Kaketype.Gjærbakst, "Salt", 2);
+        Operasjoner operasjon = new Operasjoner();
+        // hvordan legger jeg til i ingredienslisten?
 
-
+        operasjon.registrerOppskrift("Boller", Kaketype.Gjærbakst, operasjon.ingrediensList);
 
 
     }
+
     @Test
     void leggTilOppskrift (){
         Operasjoner regnyOpp = new Operasjoner();
