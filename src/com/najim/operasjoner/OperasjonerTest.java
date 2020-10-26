@@ -29,9 +29,12 @@ class OperasjonerTest {
     void registrerOppskrift() {
         Operasjoner operasjon = new Operasjoner();
         // hvordan legger jeg til i ingredienslisten?
-
+        operasjon.registrerIngrediens("Salt", 50);
+        operasjon.registrerIngrediens("Pepper", 100);
+        operasjon.registrerIngrediens("Melk", 100);
         operasjon.registrerOppskrift("Boller", Kaketype.Gjærbakst, operasjon.ingrediensList);
 
+        System.out.println(operasjon.oppskriftList);
 
     }
 
