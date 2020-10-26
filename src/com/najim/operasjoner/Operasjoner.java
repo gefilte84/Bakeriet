@@ -29,7 +29,7 @@ public class Operasjoner {
 
     public void oppdaterLager(UUID ingrediensId, int gram) {
         for (Ingrediens sok : ingrediensList) {
-            if (sok.getIngrediensId() == ingrediensId) {
+            if (sok.getIngrediensId().equals(ingrediensId)) {
                 int nyGram = sok.gram + gram;
                 sok.setGram(nyGram);
             }else if (gram <= 0) {

@@ -37,6 +37,14 @@ class OperasjonerTest {
     }
     @Test
     void oppdaterLager() {
+        Operasjoner oppdaterIngrediens = new Operasjoner();
+
+        UUID test = UUID.fromString("23456734-2567-2569-1111-222236190458");
+        Ingrediens nyIngrediens = new Ingrediens(test, "Salt", 40);
+        oppdaterIngrediens.ingrediensList.add(nyIngrediens);
+        oppdaterIngrediens.oppdaterLager(test, 50);
+
+        System.out.println(oppdaterIngrediens.ingrediensList);
     }
 
     @Test

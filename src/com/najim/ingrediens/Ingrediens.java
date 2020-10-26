@@ -17,6 +17,7 @@ public class Ingrediens {
         this.gram = gram;
     }
     public int setGram(int nyGram){
+
         return gram;
     }
 
