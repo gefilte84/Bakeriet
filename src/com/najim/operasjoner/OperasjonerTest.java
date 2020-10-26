@@ -49,10 +49,40 @@ class OperasjonerTest {
 
     @Test
     void alleOppskrifterKakeType() {
+
     }
 
     @Test
     void alleKakeTyperSortertPaaNavn() {
+        Operasjoner nyOppskrift = new Operasjoner();
+        Operasjoner nyOppskrift1 = new Operasjoner();
+        Operasjoner nyOppskrift2 = new Operasjoner();
+        Operasjoner nyOppskrift3 = new Operasjoner();
+
+        nyOppskrift.registrerIngrediens("Melk", 2);
+        nyOppskrift.registrerIngrediens("Salt", 50);
+        nyOppskrift.registrerOppskrift("Boller", Kaketype.Gjærbakst, nyOppskrift.ingrediensList);
+
+        nyOppskrift1.registrerIngrediens("Melk", 50);
+        nyOppskrift1.registrerIngrediens("Mel", 100);
+        nyOppskrift1.registrerIngrediens("Salt", 20);
+        nyOppskrift.registrerOppskrift("Vaniljeboller", Kaketype.Gjærbakst, nyOppskrift.ingrediensList);
+
+        nyOppskrift2.registrerIngrediens("Mel", 100);
+        nyOppskrift2.registrerIngrediens("Vann", 200);
+        nyOppskrift2.registrerOppskrift("Vafler", Kaketype.AnnetBakverk, nyOppskrift.ingrediensList);
+
+        nyOppskrift3.registrerIngrediens("Melk", 100);
+        nyOppskrift3.registrerIngrediens("Egg", 50);
+        nyOppskrift3.registrerIngrediens("Sukker", 100);
+        nyOppskrift3.registrerIngrediens("Kardemomme", 20);
+        nyOppskrift3.registrerOppskrift("Kanelbolle", Kaketype.Småkaker, nyOppskrift.ingrediensList);
+
+
+        nyOppskrift.alleKakeTyperSortertPaaNavn(Kaketype.Gjærbakst);
+
+
+
     }
 
     @Test

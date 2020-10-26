@@ -49,8 +49,8 @@ public class Operasjoner {
     // henter spesifikk kaketype sortert på oppskriftsnavn
     public void alleKakeTyperSortertPaaNavn(Kaketype kaketype) {
         for (Oppskrift sokKake : oppskriftList) {
-            if (sokKake.getKaketype() == kaketype) {
-                Arrays.sort(new String[]{sokKake.getOppskriftNavn()});
+            if (sokKake.getKaketype().equals(kaketype)) {
+                // Arrays.sort(new String[]{sokKake.getOppskriftNavn()});
                 System.out.println("Alle oppskrifter: " + sokKake);
             }
         }
