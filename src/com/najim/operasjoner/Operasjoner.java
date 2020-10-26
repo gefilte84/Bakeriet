@@ -18,11 +18,12 @@ public class Operasjoner {
         Ingrediens nyIngrediens = new Ingrediens(UUID.randomUUID(), ingrediensNavn, gram);
         ingrediensList.add(nyIngrediens);
     }
-    public void registrerOppskrift(String oppskriftNavn, Kaketype kaketype, ArrayList ingrediensList){
+    public void registrerOppskrift(String oppskriftNavn, Kaketype kaketype, ArrayList ingredienser){
         // Metoden for å legge til ny oppskrift
 
+
         Oppskrift nyOppskrift = new Oppskrift(UUID.randomUUID(), oppskriftNavn, LocalDate.now(),
-                kaketype, ingrediensList);
+                kaketype, ingredienser);
         oppskriftList.add(nyOppskrift);
     }
 

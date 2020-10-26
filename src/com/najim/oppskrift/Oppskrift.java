@@ -15,7 +15,7 @@ public class Oppskrift {
     public String oppskriftNavn;
     private final LocalDate localDate;
     public final Kaketype kaketype;
-    private ArrayList<Ingrediens> ingredienser = new ArrayList<>();
+    public ArrayList<Ingrediens> ingredienser = new ArrayList<>();
 
 
 
@@ -24,18 +24,22 @@ public class Oppskrift {
         this.oppskriftNavn = oppskriftNavn;
         this.localDate = localDate;
         this.kaketype = kaketype;
-
+        this.ingredienser = ingredienser;
 
     }
     public void LeggTilIngrediens(Ingrediens ingrediens){
         ingredienser.add(ingrediens);
     }
+
     public void visIngredienser() {
         for (Ingrediens produkt : ingredienser) {
             System.out.println(produkt);
         }
     }
 
+    public ArrayList<Ingrediens> getIngredienser() {
+        return ingredienser;
+    }
 
     public UUID getOppskriftId() { return oppskriftId; }
 
@@ -56,6 +60,7 @@ public class Oppskrift {
                 ", oppskriftNavn='" + oppskriftNavn + '\'' +
                 ", localDate=" + localDate +
                 ", kaketype=" + kaketype +
+                ", ingredienser=" + ingredienser +
                 '}';
     }
 }
